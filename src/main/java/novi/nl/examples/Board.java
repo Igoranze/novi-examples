@@ -13,6 +13,20 @@ public class Board {
 		return board;
 	}
 
+	public boolean boardIsFull() {
+		boolean result = true;
+		
+		for (int row = 0; row < board.length; row++) {
+			for (int column = 0; column < board[row].length; column++) {
+				if (board[row][column] == null) {
+					result = false;
+				}
+			}			
+		}
+		
+		return result;
+	}
+	
 	public boolean isValidMove(int[] move) throws InvalidMoveException {
 		try {
 			if (board[move[0]][move[1]] == null)

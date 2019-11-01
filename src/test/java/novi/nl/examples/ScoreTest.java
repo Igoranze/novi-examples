@@ -26,20 +26,4 @@ public class ScoreTest extends TestCase {
 		assertEquals(expected, actual);
 	}
 	
-	@Test
-	public void testHumanPlayerDoAMove() {
-		Human human = new Human("Igor", Piece.OPIECE);
-		
-		String data = "2\r\n2\r\n";
-		System.setIn(new ByteArrayInputStream(data.getBytes()));
-	
-		Scanner sc = new Scanner(System.in);
-		
-		int[] actual = human.doMove(sc);
-		int[] expected = {2, 2};
-		
-		assertEquals(expected[0], actual[0]);
-		assertEquals(expected[1], actual[1]);
-	}
-	
 }

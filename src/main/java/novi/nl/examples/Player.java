@@ -1,7 +1,5 @@
 package novi.nl.examples;
 
-import java.util.Scanner;
-
 public class Player {
 
 	private String name;
@@ -19,14 +17,12 @@ public class Player {
 		return name;
 	}
 
-	public int[] doMove(Scanner in) throws NumberFormatException {
-		System.out.println("Kies een rij");
-		int row = Integer.parseInt(in.nextLine());
+	public int[] doMove(String row, String column) throws NumberFormatException {
+		
+		int rowI = Integer.parseInt(row);
+		int columnI = Integer.parseInt(column);
 
-		System.out.println("Kies een kolom");
-		int column = Integer.parseInt(in.nextLine());
-
-		int[] result = { row, column };
+		int[] result = { rowI, columnI };
 		return result;
 	}
 
@@ -38,8 +34,7 @@ public class Player {
 		return piece;
 	}
 
-	public boolean exitGame(Scanner in) {
-		System.out.println("Wil je het spel afsluiten?");
-		return Boolean.parseBoolean(in.nextLine());
+	public void exitGame() {
+		System.exit(1);
 	}
 }
